@@ -93,3 +93,25 @@ function setupStoreFilters() {
   if (!filters.length || !grid) return;
 
   filters.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filters.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      const list = f === 'all' ? GAMES : GAMES.filter((g) => g.console === f);
+      if (!list.length) {
+        grid.innerHTML = `<p class="muted" style="grid-column:1/-1;text-align:center;padding:40px 0;">No games yet for this console — coming soon.</p>`;
+        return;
+      }
+      grid.innerHTML = list.map(gameCard).join('');
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderConsoleGrid('consoleGrid', CONSOLES, 6);
+  renderConsoleGrid('allConsolesGrid', CONSOLES);
+  renderGameGrid('gameGrid', GAMES, 4);
+  renderGameGrid('storeGrid', GAMES);
+  renderHomebrewGrid('homebrewGrid', HOMEBREW);
+  setupStoreFilters();
+});
