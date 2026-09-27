@@ -33,13 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-  document.querySelectorAll('.console-card').forEach((card) => {
+  // Horizontal wheel → vertical page scroll on desktop for scroll rows
+  document.querySelectorAll('.scroll-row').forEach((row) => {
+    row.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        row.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
+  });
+
+  // Console card → store filtered by console
+  document.querySelectorAll('.console-card[data-console]').forEach((card) => {
     card.addEventListener('click', () => {
       const id = card.dataset.console;
       window.location.href = `store.html?console=${id}`;
     });
   });
 
+  // If URL has ?console=, auto-click the store filter
   const params = new URLSearchParams(window.location.search);
   const con = params.get('console');
   if (con) {
