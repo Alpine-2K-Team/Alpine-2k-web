@@ -2,6 +2,7 @@
    ALPINE.2K — Render Functions
    ============================ */
 
+/* ---------- Console card ---------- */
 function consoleCard(c) {
   const thumbInner = c.logo
     ? `<img src="assets/${c.logo}" alt="${c.name}" class="console-logo" loading="lazy"
@@ -9,7 +10,7 @@ function consoleCard(c) {
     : `<span class="console-short">${c.short}</span>`;
 
   return `
-    <div class="console-card" data-console="${c.id}" style="--accent:${c.accent}">
+    <a class="console-card" href="console.html?id=${c.id}" style="--accent:${c.accent}">
       <div class="console-thumb">
         <div class="console-glow"></div>
         ${thumbInner}
@@ -17,131 +18,92 @@ function consoleCard(c) {
       <div class="console-body">
         <div class="console-top">
           <h3>${c.name}</h3>
-          <span class="badge badge-planned">Planned</span>
+          <span class="badge badge-planned" data-count="${c.id}">…</span>
         </div>
         <div class="console-meta">
-          <span>${c.games} games</span>
-          <span>${c.homebrew} homebrew</span>
+          <span class="small muted">${GITHUB_ORG}/${c.repo}</span>
+          <span class="small" style="color:var(--pink)">Open →</span>
         </div>
       </div>
-    </div>
+    </a>
   `;
 }
 
-function gameCard(g) {
-  const c = CONSOLES.find((x) => x.id === g.console);
-  const accent = c ? c.accent : '#5BC8FF';
-  const tag = c ? c.short : g.console.toUpperCase();
+/* ---------- Release (game) card ---------- */
+function releaseCard(r) {
+  const firstAsset = (r.assets || [])[0];
+  const url = firstAsset ? firstAsset.browser_download_url : r.html_url;
+  const size = firstAsset ? `${(firstAsset.size / 1024 / 1024).toFixed(1)} MB` : 'Open';
+
   return `
-    <div class="game-card" data-console="${g.console}">
-      <div class="game-thumb" style="--accent:${accent}">
-        <span class="game-tag">${tag}</span>
+    <div class="game-card" data-console="${r.consoleId}">
+      <div class="game-thumb" style="--accent:${r.consoleAccent}">
+        <span class="game-tag">${r.consoleShort}</span>
       </div>
       <div class="game-body">
-        <h3>${g.title}</h3>
+        <h3 title="${r.name || r.tag_name}">${r.name || r.tag_name}</h3>
+        <p class="muted small" style="margin-bottom:8px;">${r.tag_name}</p>
         <div class="game-meta">
-          <span class="game-price">${g.price}</span>
-          <button class="btn btn-primary btn-sm">Download</button>
+          <span class="game-price">${size}</span>
+          <a class="btn btn-primary btn-sm" href="${url}" target="_blank" rel="noopener">Download</a>
         </div>
       </div>
     </div>
   `;
 }
 
-function homebrewCard(h) {
-  const c = CONSOLES.find((x) => x.id === h.console);
-  const accent = c ? c.accent : '#5BC8FF';
-  const tag = h.console === 'all' ? 'ALL' : (c ? c.short : h.console.toUpperCase());
+/* ---------- Release row (used on console page) ---------- */
+function releaseRow(r) {
+  const firstAsset = (r.assets || [])[0];
+  const url = firstAsset ? firstAsset.browser_download_url : r.html_url;
+  const date = r.published_at ? new Date(r.published_at).toLocaleDateString() : '';
+  const size = firstAsset ? `${(firstAsset.size / 1024 / 1024).toFixed(1)} MB` : '';
+
   return `
-    <div class="game-card">
-      <div class="game-thumb" style="--accent:${accent}">
-        <span class="game-tag">${tag}</span>
+    <div class="release-row">
+      <div>
+        <h4 style="font-size:1.1rem;margin-bottom:6px;">${r.name || r.tag_name}</h4>
+        <p class="muted small">${r.tag_name}${date ? ' · ' + date : ''}${size ? ' · ' + size : ''}</p>
       </div>
-      <div class="game-body">
-        <h3>${h.title}</h3>
-        <p class="muted small">by ${h.author}</p>
-        <div class="game-meta">
-          <button class="btn btn-primary btn-sm">Get</button>
-        </div>
-      </div>
+      <a class="btn btn-primary btn-sm" href="${url}" target="_blank" rel="noopener">Download</a>
     </div>
   `;
 }
 
-function downloadCard(c) {
-  const thumbInner = c.logo
-    ? `<img src="assets/${c.logo}" alt="${c.name}" class="console-logo" loading="lazy" />`
-    : `<span class="console-short">${c.short}</span>`;
-  return `
-    <div class="console-card" style="--accent:${c.accent}">
-      <div class="console-thumb">
-        <div class="console-glow"></div>
-        ${thumbInner}
-      </div>
-      <div class="console-body">
-        <div class="console-top">
-          <h3>${c.name}</h3>
-          <span class="badge badge-planned">Coming soon</span>
-        </div>
-        <p class="muted small" style="margin:10px 0 14px;">Alpine.2K app for ${c.short}.</p>
-        <button class="btn btn-ghost btn-sm" disabled style="opacity:0.6;cursor:not-allowed;">Not yet available</button>
-      </div>
-    </div>
-  `;
-}
-
-function renderConsoleGrid(targetId, list, limit) {
+/* ---------- Grid renderers ---------- */
+function renderConsoleGrid(targetId, list) {
   const el = document.getElementById(targetId);
   if (!el) return;
-  const items = limit ? list.slice(0, limit) : list;
-  el.innerHTML = items.map(consoleCard).join('');
+  el.innerHTML = list.map(consoleCard).join('');
 }
 
-function renderGameGrid(targetId, list, limit) {
+function renderReleaseGrid(targetId, releases, limit) {
   const el = document.getElementById(targetId);
   if (!el) return;
-  const items = limit ? list.slice(0, limit) : list;
-  el.innerHTML = items.map(gameCard).join('');
+  if (!releases.length) {
+    el.innerHTML = `<p class="muted" style="grid-column:1/-1;text-align:center;padding:48px 0;">No releases yet — coming soon.</p>`;
+    return;
+  }
+  const items = limit ? releases.slice(0, limit) : releases;
+  el.innerHTML = items.map(releaseCard).join('');
 }
 
-function renderHomebrewGrid(targetId, list) {
+function renderReleaseList(targetId, releases) {
   const el = document.getElementById(targetId);
   if (!el) return;
-  el.innerHTML = list.map(homebrewCard).join('');
+  if (!releases.length) {
+    el.innerHTML = `<p class="muted" style="text-align:center;padding:32px 0;">No releases yet — coming soon.</p>`;
+    return;
+  }
+  el.innerHTML = releases.map(releaseRow).join('');
 }
 
-function renderDownloadGrid(targetId, list) {
-  const el = document.getElementById(targetId);
-  if (!el) return;
-  el.innerHTML = list.map(downloadCard).join('');
-}
-
-function setupStoreFilters() {
-  const filters = document.querySelectorAll('.filter');
-  const grid = document.getElementById('storeGrid');
-  if (!filters.length || !grid) return;
-
-  filters.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filters.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      const list = f === 'all' ? GAMES : GAMES.filter((g) => g.console === f);
-      if (!list.length) {
-        grid.innerHTML = `<p class="muted" style="grid-column:1/-1;text-align:center;padding:40px 0;">No games yet for this console — coming soon.</p>`;
-        return;
-      }
-      grid.innerHTML = list.map(gameCard).join('');
-    });
+/* ---------- Live count badges on console cards ---------- */
+function updateConsoleCounts(allReleases) {
+  CONSOLES.forEach((c) => {
+    const badge = document.querySelector(`.badge[data-count="${c.id}"]`);
+    if (!badge) return;
+    const count = allReleases.filter((r) => r.consoleId === c.id).length;
+    badge.textContent = count > 0 ? `${count} releases` : 'Coming soon';
   });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderConsoleGrid('consoleGrid', CONSOLES, 8);
-  renderConsoleGrid('allConsolesGrid', CONSOLES);
-  renderGameGrid('gameGrid', GAMES, 8);
-  renderGameGrid('storeGrid', GAMES);
-  renderHomebrewGrid('homebrewGrid', HOMEBREW);
-  renderDownloadGrid('downloadGrid', CONSOLES);
-  setupStoreFilters();
-});
