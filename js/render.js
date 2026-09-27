@@ -3,7 +3,6 @@
    ============================ */
 
 function consoleCard(c) {
-  // Logo if provided, else text fallback
   const thumbInner = c.logo
     ? `<img src="assets/${c.logo}" alt="${c.name}" class="console-logo" loading="lazy" />`
     : `<span class="console-short">${c.short}</span>`;
@@ -68,8 +67,6 @@ function homebrewCard(h) {
   `;
 }
 
-/* ---------- Grid renderers ---------- */
-
 function renderConsoleGrid(targetId, list, limit) {
   const el = document.getElementById(targetId);
   if (!el) return;
@@ -90,35 +87,9 @@ function renderHomebrewGrid(targetId, list) {
   el.innerHTML = list.map(homebrewCard).join('');
 }
 
-/* ---------- Store filters ---------- */
-
 function setupStoreFilters() {
   const filters = document.querySelectorAll('.filter');
   const grid = document.getElementById('storeGrid');
   if (!filters.length || !grid) return;
 
   filters.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filters.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      const list = f === 'all' ? GAMES : GAMES.filter((g) => g.console === f);
-      if (!list.length) {
-        grid.innerHTML = `<p class="muted" style="grid-column:1/-1;text-align:center;padding:40px 0;">No games yet for this console — coming soon.</p>`;
-        return;
-      }
-      grid.innerHTML = list.map(gameCard).join('');
-    });
-  });
-}
-
-/* ---------- Auto-boot ---------- */
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderConsoleGrid('consoleGrid', CONSOLES, 6);
-  renderConsoleGrid('allConsolesGrid', CONSOLES);
-  renderGameGrid('gameGrid', GAMES, 4);
-  renderGameGrid('storeGrid', GAMES);
-  renderHomebrewGrid('homebrewGrid', HOMEBREW);
-  setupStoreFilters();
-});
