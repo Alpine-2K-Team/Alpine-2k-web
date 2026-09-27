@@ -3,7 +3,7 @@
 **The homebrew app for modded consoles.** Install once, download real — legally acquired — games and homebrew directly on your console.
 
 ## Live site
-https://alpine-2k.github.io/alpine-2k-web/
+https://alpine-2k-team.github.io/alpine-2k-web/
 
 ## Pages
 - `index.html` — Home
