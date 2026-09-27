@@ -13,12 +13,14 @@
 </head>
 <body class="home">
 
+  <!-- ============ ROTATING BACKGROUND ============ -->
   <div class="bg-layer" aria-hidden="true">
     <div class="bg-gif"></div>
     <div class="bg-stack" id="bgStack"></div>
   </div>
   <div class="bg-vignette" aria-hidden="true"></div>
 
+  <!-- ============ NAVBAR ============ -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="index.html" class="brand">
@@ -48,12 +50,14 @@
     <a href="legal.html">Legal</a>
   </div>
 
+  <!-- ============ HERO (Rockstar-style fullscreen) ============ -->
   <section class="hero">
+    <div class="hero-slide-label" id="heroLabel">Featured</div>
     <div class="container hero-content">
       <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="hero-logo" />
       <p class="eyebrow">Alpine.2K · Homebrew App</p>
-      <h1 class="hero-title">One app.<br /><span class="accent">Every console.</span></h1>
-      <p class="hero-sub">The homebrew app for modded consoles. Install it once, then download real — legally acquired — games and homebrew straight from your console.</p>
+      <h1 class="hero-title">One app.<br /><span class="gradient-text">Every console.</span></h1>
+      <p class="hero-sub">Install Alpine.2K on your modded console and download real — legally acquired — games and homebrew straight from your console.</p>
       <div class="hero-cta">
         <a href="download.html" class="btn btn-primary">Download Alpine.2K</a>
         <a href="consoles.html" class="btn btn-ghost">Supported Consoles</a>
@@ -63,6 +67,19 @@
     <div class="scroll-hint">Scroll ↓</div>
   </section>
 
+  <!-- ============ FULL-BLEED FEATURE BAND (Rockstar "Latest & Greatest") ============ -->
+  <section class="feature-band">
+    <div class="feature-band-bg" style="background-image:url('assets/forza-horizon-2-is-the-best-looking-game-on-xbox-one-change-v0-mp9w1wyk1lge1.jpg')"></div>
+    <div class="feature-band-overlay"></div>
+    <div class="container feature-band-content">
+      <p class="eyebrow">Now Available</p>
+      <h2 class="feature-band-title">Alpine.2K <span class="gradient-text">v1.0</span></h2>
+      <p class="feature-band-sub">The first public build of the Alpine.2K homebrew app — for supported modded consoles.</p>
+      <a href="download.html" class="btn btn-primary">Get the app</a>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
   <section class="stats">
     <div class="container stats-grid">
       <div><div class="stat-val">12+</div><div class="stat-lbl">Consoles</div></div>
@@ -72,63 +89,67 @@
     </div>
   </section>
 
-  <!-- WHAT IS IT -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">What it is</p>
-        <h2>An app store on your console</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <h3>1. Install the app</h3>
-          <p class="muted">Download the Alpine.2K build for your modded console and install it once.</p>
-        </div>
-        <div class="card">
-          <h3>2. Browse everything</h3>
-          <p class="muted">Games, DLC, updates, and homebrew — all inside the Alpine.2K app on your console.</p>
-        </div>
-        <div class="card">
-          <h3>3. Download to console</h3>
-          <p class="muted">Tap install, and Alpine.2K handles the rest — straight to your console's storage.</p>
-        </div>
-      </div>
+  <!-- ============ SPLIT PANEL (Rockstar "feature" tile) ============ -->
+  <section class="split-panel">
+    <div class="split-panel-media" style="background-image:url('assets/homefront-xbox-360-17_orig.png')">
+      <div class="split-panel-media-overlay"></div>
+    </div>
+    <div class="split-panel-body">
+      <p class="eyebrow">What it is</p>
+      <h2>An app store <span class="gradient-text">on your console</span></h2>
+      <p class="muted">Alpine.2K is a homebrew app. Install it once on your modded console, and browse games, DLC, updates, and homebrew — all from inside the app.</p>
+      <a href="about.html" class="btn btn-ghost">Learn more →</a>
     </div>
   </section>
 
-  <!-- CONSOLES -->
+  <!-- ============ HORIZONTAL SCROLL — CONSOLES ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head-left">
+        <div>
+          <p class="eyebrow">Supported Systems</p>
+          <h2>Pick your console</h2>
+        </div>
+        <a href="consoles.html" class="section-link">See all →</a>
+      </div>
+    </div>
+    <div class="scroll-row" id="consoleGrid"></div>
+  </section>
+
+  <!-- ============ FULL-BLEED FEATURE (second one, reversed) ============ -->
+  <section class="split-panel reverse">
+    <div class="split-panel-media" style="background-image:url('assets/GRID-Autosport-Xbox-360.jpg')">
+      <div class="split-panel-media-overlay"></div>
+    </div>
+    <div class="split-panel-body">
+      <p class="eyebrow">Inside the app</p>
+      <h2>Real games. <span class="gradient-text">Real downloads.</span></h2>
+      <p class="muted">Browse the full library — PS3, PS4, PS5, Xbox, Xbox 360, Wii, Nintendo DS, and more. Every download is legally acquired or community homebrew.</p>
+      <a href="store.html" class="btn btn-primary">Enter the store →</a>
+    </div>
+  </section>
+
+  <!-- ============ HORIZONTAL SCROLL — GAMES ============ -->
   <section class="section section-alt">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Supported Systems</p>
-        <h2>Pick your console</h2>
-      </div>
-      <div class="grid-3" id="consoleGrid"></div>
-      <div class="section-cta">
-        <a href="consoles.html" class="btn btn-ghost">See all consoles →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED GAMES -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Inside the app</p>
-        <h2>Featured games</h2>
-      </div>
-      <div class="grid-4" id="gameGrid"></div>
-      <div class="section-cta">
-        <a href="store.html" class="btn btn-primary">Browse the full library →</a>
+      <div class="section-head section-head-left">
+        <div>
+          <p class="eyebrow">Inside the app</p>
+          <h2>Featured games</h2>
+        </div>
+        <a href="store.html" class="section-link">All games →</a>
       </div>
     </div>
+    <div class="scroll-row" id="gameGrid"></div>
   </section>
 
-  <!-- CTA -->
+  <!-- ============ CTA ============ -->
   <section class="cta">
+    <div class="cta-bg" style="background-image:url('assets/RM01-600x337.jpg')"></div>
+    <div class="cta-overlay"></div>
     <div class="container">
       <p class="eyebrow">Get started</p>
-      <h2>Ready to <span class="accent">ascend?</span></h2>
+      <h2>Ready to <span class="gradient-text">ascend?</span></h2>
       <p class="cta-sub">Grab the app for your modded console and unlock every game and homebrew you legally own.</p>
       <div class="hero-cta">
         <a href="download.html" class="btn btn-primary">Download Alpine.2K</a>
@@ -137,6 +158,7 @@
     </div>
   </section>
 
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
