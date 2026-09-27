@@ -2,7 +2,7 @@
    ALPINE.2K — Data
    ============================ */
 
-/* Hero background rotation — every image in assets/ */
+/* Backgrounds — every image that rotates in the hero + banners */
 const BACKGROUNDS = [
   'assets/d13b6895-d53b-4b17-a660-808b03d1cf97.gif',
   'assets/forza-horizon-2-is-the-best-looking-game-on-xbox-one-change-v0-mp9w1wyk1lge1.jpg',
@@ -12,7 +12,7 @@ const BACKGROUNDS = [
   'assets/1054.jpg'
 ];
 
-/* Consoles — logo: filename in assets/ (leave '' to fall back to text) */
+/* Consoles */
 const CONSOLES = [
   { id: 'ps5',     name: 'PlayStation 5',   short: 'PS5',         accent: '#0070D1', status: 'planned', logo: 'ps5-console-logo-free-vector.jpg', games: 0, homebrew: 0 },
   { id: 'ps4',     name: 'PlayStation 4',   short: 'PS4',         accent: '#0070D1', status: 'planned', logo: 'PS4-Logo.jpg',                    games: 0, homebrew: 0 },
