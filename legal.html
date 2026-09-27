@@ -9,8 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="bg-gif" aria-hidden="true"></div>
-  <div class="bg-overlay" aria-hidden="true"></div>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-gif"></div>
+    <div class="bg-stack static" id="bgStack"></div>
+  </div>
+  <div class="bg-vignette" aria-hidden="true"></div>
 
   <header class="navbar solid" id="navbar">
     <div class="container nav-inner">
