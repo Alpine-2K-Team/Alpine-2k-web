@@ -4,7 +4,7 @@
 all in one hub.
 
 ## Live site
-https://alpine-2k.github.io/alpine-2k-web/
+https://alpine-2k-team.github.io/alpine-2k-web/
 
 ## What's inside
 - `index.html` — Home
