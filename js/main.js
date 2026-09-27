@@ -3,12 +3,10 @@
    ============================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  /* Year in footer */
   document.querySelectorAll('#year').forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
 
-  /* Navbar scroll effect */
   const navbar = document.getElementById('navbar');
   if (navbar && !navbar.classList.contains('solid')) {
     const onScroll = () => {
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* Mobile menu */
   const menuBtn = document.getElementById('menuBtn');
   const closeBtn = document.getElementById('closeBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -36,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-  /* Console card click → store filtered */
   document.querySelectorAll('.console-card').forEach((card) => {
     card.addEventListener('click', () => {
       const id = card.dataset.console;
@@ -44,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* If URL has ?console=, pre-filter the store */
   const params = new URLSearchParams(window.location.search);
   const con = params.get('console');
   if (con) {
