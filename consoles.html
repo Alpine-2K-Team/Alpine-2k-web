@@ -24,7 +24,6 @@
       <nav class="nav-links">
         <a href="store.html">Store</a>
         <a href="consoles.html" class="active">Consoles</a>
-        <a href="homebrew.html">Homebrew</a>
         <a href="download.html">Download</a>
         <a href="about.html">About</a>
         <a href="https://github.com/Alpine-2K" target="_blank" class="nav-gh">GitHub</a>
@@ -38,7 +37,6 @@
     <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="mobile-logo" />
     <a href="store.html">Store</a>
     <a href="consoles.html">Consoles</a>
-    <a href="homebrew.html">Homebrew</a>
     <a href="download.html">Download</a>
     <a href="about.html">About</a>
     <a href="legal.html">Legal</a>
@@ -48,9 +46,9 @@
     <div class="page-head-bg" style="background-image:url('assets/homefront-xbox-360-17_orig.png')"></div>
     <div class="page-head-overlay"></div>
     <div class="container">
-      <p class="eyebrow">Supported Systems</p>
+      <p class="eyebrow">One repo per console</p>
       <h1>Consoles</h1>
-      <p class="muted">Every console that has (or will have) an Alpine.2K app build.</p>
+      <p class="muted">Every console has its own Alpine.2K GitHub repo. Click one to see all its releases.</p>
     </div>
   </section>
 
@@ -64,13 +62,12 @@
     <div class="container footer-grid">
       <div>
         <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="footer-logo" />
-        <p class="muted">The homebrew app for modded consoles.</p>
+        <p class="muted">One repo per console. One app for everything.</p>
       </div>
       <div>
         <h4>Explore</h4>
         <a href="store.html">Store</a>
         <a href="consoles.html">Consoles</a>
-        <a href="homebrew.html">Homebrew</a>
         <a href="download.html">Download</a>
       </div>
       <div>
@@ -86,7 +83,15 @@
   </footer>
 
   <script src="js/data.js"></script>
+  <script src="js/github.js"></script>
   <script src="js/render.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      renderConsoleGrid('allConsolesGrid', CONSOLES);
+      const all = await fetchAllReleases(5);
+      updateConsoleCounts(all);
+    });
+  </script>
 </body>
 </html>
