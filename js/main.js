@@ -21,19 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.getElementById('closeBtn');
   const mobileMenu = document.getElementById('mobileMenu');
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
-  }
-  if (closeBtn && mobileMenu) {
-    closeBtn.addEventListener('click', () => mobileMenu.classList.remove('open'));
-  }
-  if (mobileMenu) {
-    mobileMenu.querySelectorAll('a').forEach((a) =>
-      a.addEventListener('click', () => mobileMenu.classList.remove('open'))
-    );
-  }
+  if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+  if (closeBtn && mobileMenu) closeBtn.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  if (mobileMenu) mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
-  // Horizontal wheel → vertical page scroll on desktop for scroll rows
   document.querySelectorAll('.scroll-row').forEach((row) => {
     row.addEventListener('wheel', (e) => {
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
@@ -43,19 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: false });
   });
 
-  // Console card → store filtered by console
   document.querySelectorAll('.console-card[data-console]').forEach((card) => {
     card.addEventListener('click', () => {
-      const id = card.dataset.console;
-      window.location.href = `store.html?console=${id}`;
+      window.location.href = `console.html?id=${card.dataset.console}`;
     });
   });
-
-  // If URL has ?console=, auto-click the store filter
-  const params = new URLSearchParams(window.location.search);
-  const con = params.get('console');
-  if (con) {
-    const filterBtn = document.querySelector(`.filter[data-filter="${con}"]`);
-    if (filterBtn) filterBtn.click();
-  }
 });
