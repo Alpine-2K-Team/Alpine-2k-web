@@ -14,126 +14,18 @@ const BACKGROUNDS = [
 
 /* Consoles — logo: filename in assets/ (leave '' to fall back to text) */
 const CONSOLES = [
-  {
-    id: 'ps5',
-    name: 'PlayStation 5',
-    short: 'PS5',
-    accent: '#0070D1',
-    status: 'planned',
-    logo: 'ps5-console-logo-free-vector.jpg',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: 'ps4',
-    name: 'PlayStation 4',
-    short: 'PS4',
-    accent: '#0070D1',
-    status: 'planned',
-    logo: 'PS4-Logo.jpg',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: 'ps3',
-    name: 'PlayStation 3',
-    short: 'PS3',
-    accent: '#0070D1',
-    status: 'planned',
-    logo: 'PS3-Logo.png',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: 'psvita',
-    name: 'PS Vita',
-    short: 'PS Vita',
-    accent: '#0070D1',
-    status: 'planned',
-    logo: 'ps-vita-logo.png',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: 'psp',
-    name: 'PSP',
-    short: 'PSP',
-    accent: '#0070D1',
-    status: 'planned',
-    logo: '',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: 'xbox',
-    name: 'Xbox',
-    short: 'Xbox',
-    accent: '#107C10',
-    status: 'planned',
-    logo: 'xbox-logo-2001.webp',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: 'xbox360',
-    name: 'Xbox 360',
-    short: 'Xbox 360',
-    accent: '#107C10',
-    status: 'planned',
-    logo: '659323-xbox360_001.jpg',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: 'wii',
-    name: 'Nintendo Wii',
-    short: 'Wii',
-    accent: '#00A0E9',
-    status: 'planned',
-    logo: 'NmqpY2dduBuVtW5kPzdyyZ.jpg',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: 'wiiu',
-    name: 'Wii U',
-    short: 'Wii U',
-    accent: '#00A0E9',
-    status: 'planned',
-    logo: '',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: 'nds',
-    name: 'Nintendo DS',
-    short: 'Nintendo DS',
-    accent: '#E60012',
-    status: 'planned',
-    logo: '',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: '3ds',
-    name: 'Nintendo 3DS',
-    short: '3DS',
-    accent: '#E60012',
-    status: 'planned',
-    logo: '',
-    games: 0,
-    homebrew: 0
-  },
-  {
-    id: 'switch',
-    name: 'Nintendo Switch',
-    short: 'Switch',
-    accent: '#E60012',
-    status: 'planned',
-    logo: '',
-    games: 0,
-    homebrew: 0
-  }
+  { id: 'ps5',     name: 'PlayStation 5',   short: 'PS5',         accent: '#0070D1', status: 'planned', logo: 'ps5-console-logo-free-vector.jpg', games: 0, homebrew: 0 },
+  { id: 'ps4',     name: 'PlayStation 4',   short: 'PS4',         accent: '#0070D1', status: 'planned', logo: 'PS4-Logo.jpg',                    games: 0, homebrew: 0 },
+  { id: 'ps3',     name: 'PlayStation 3',   short: 'PS3',         accent: '#0070D1', status: 'planned', logo: 'PS3-Logo.png',                    games: 0, homebrew: 0 },
+  { id: 'psvita',  name: 'PS Vita',         short: 'PS Vita',     accent: '#0070D1', status: 'planned', logo: 'ps-vita-logo.png',                games: 0, homebrew: 0 },
+  { id: 'psp',     name: 'PSP',             short: 'PSP',         accent: '#0070D1', status: 'planned', logo: '',                                games: 0, homebrew: 0 },
+  { id: 'xbox',    name: 'Xbox',            short: 'Xbox',        accent: '#107C10', status: 'planned', logo: 'xbox-logo-2001.webp',             games: 0, homebrew: 0 },
+  { id: 'xbox360', name: 'Xbox 360',        short: 'Xbox 360',    accent: '#107C10', status: 'planned', logo: '659323-xbox360_001.jpg',          games: 0, homebrew: 0 },
+  { id: 'wii',     name: 'Nintendo Wii',    short: 'Wii',         accent: '#00A0E9', status: 'planned', logo: 'NmqpY2dduBuVtW5kPzdyyZ.jpg',      games: 0, homebrew: 0 },
+  { id: 'wiiu',    name: 'Wii U',           short: 'Wii U',       accent: '#00A0E9', status: 'planned', logo: '',                                games: 0, homebrew: 0 },
+  { id: 'nds',     name: 'Nintendo DS',     short: 'Nintendo DS', accent: '#E60012', status: 'planned', logo: '',                                games: 0, homebrew: 0 },
+  { id: '3ds',     name: 'Nintendo 3DS',    short: '3DS',         accent: '#E60012', status: 'planned', logo: '',                                games: 0, homebrew: 0 },
+  { id: 'switch',  name: 'Nintendo Switch', short: 'Switch',      accent: '#E60012', status: 'planned', logo: '',                                games: 0, homebrew: 0 }
 ];
 
 const GAMES = [
