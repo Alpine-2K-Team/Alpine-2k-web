@@ -24,7 +24,6 @@
       <nav class="nav-links">
         <a href="store.html">Store</a>
         <a href="consoles.html">Consoles</a>
-        <a href="homebrew.html">Homebrew</a>
         <a href="download.html" class="active">Download</a>
         <a href="about.html">About</a>
         <a href="https://github.com/Alpine-2K" target="_blank" class="nav-gh">GitHub</a>
@@ -38,7 +37,6 @@
     <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="mobile-logo" />
     <a href="store.html">Store</a>
     <a href="consoles.html">Consoles</a>
-    <a href="homebrew.html">Homebrew</a>
     <a href="download.html">Download</a>
     <a href="about.html">About</a>
     <a href="legal.html">Legal</a>
@@ -48,59 +46,29 @@
     <div class="page-head-bg" style="background-image:url('assets/forza-horizon-2-is-the-best-looking-game-on-xbox-one-change-v0-mp9w1wyk1lge1.jpg')"></div>
     <div class="page-head-overlay"></div>
     <div class="container">
-      <p class="eyebrow">Get the app</p>
+      <p class="eyebrow">Pick your console</p>
       <h1>Download <span class="gradient-text">Alpine.2K</span></h1>
-      <p class="muted">Pick your modded console below. Install the Alpine.2K app once, then browse and download games and homebrew directly from your console.</p>
+      <p class="muted">Each console has its own GitHub repo. Click yours to see every available release and download directly.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">How it works</p>
-        <h2>Three steps</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <h3>1. Mod your console</h3>
-          <p class="muted">Make sure your console is modded (CFW, HEN, RGH, JTAG, Homebrew Channel, etc.).</p>
-        </div>
-        <div class="card">
-          <h3>2. Install Alpine.2K</h3>
-          <p class="muted">Download the Alpine.2K build for your console and install it with your homebrew loader.</p>
-        </div>
-        <div class="card">
-          <h3>3. Open and download</h3>
-          <p class="muted">Launch Alpine.2K on your console — browse games and homebrew, tap install, done.</p>
-        </div>
-      </div>
+      <div class="grid-3" id="allConsolesGrid"></div>
     </div>
   </section>
 
   <section class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Builds</p>
-        <h2>Alpine.2K for your console</h2>
-      </div>
-      <div class="grid-3" id="downloadGrid"></div>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="container prose">
-      <h2>Requirements</h2>
+      <h2>How it works</h2>
       <ul>
-        <li>A modded console you own</li>
-        <li>The homebrew loader for your console (Atmosphere, HEN, Aurora, Homebrew Channel, etc.)</li>
-        <li>Network connection on your console</li>
+        <li>Mod your console (CFW, HEN, RGH, JTAG, Homebrew Channel, etc.).</li>
+        <li>Open your console's Alpine.2K repo and download the latest release.</li>
+        <li>Install it with your homebrew loader.</li>
+        <li>Open Alpine.2K on your console and browse every other release for that system.</li>
       </ul>
-
-      <h2>Which file do I need?</h2>
-      <p>Each console has its own Alpine.2K build. Pick the one that matches your console and mod method. If you're unsure, read the guide linked on each download card.</p>
-
-      <h2>Safe to use?</h2>
-      <p>Alpine.2K only lists and downloads content you legally own. It never distributes pirated games or ROMs. See our <a href="legal.html" class="accent">full disclaimer</a>.</p>
+      <h2>Legal</h2>
+      <p>Alpine.2K only lists content that's legally acquired, freely distributed, or your own homebrew. See our <a class="accent" href="legal.html">disclaimer</a>.</p>
     </div>
   </section>
 
@@ -108,13 +76,12 @@
     <div class="container footer-grid">
       <div>
         <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="footer-logo" />
-        <p class="muted">The homebrew app for modded consoles.</p>
+        <p class="muted">One repo per console. One app for everything.</p>
       </div>
       <div>
         <h4>Explore</h4>
         <a href="store.html">Store</a>
         <a href="consoles.html">Consoles</a>
-        <a href="homebrew.html">Homebrew</a>
         <a href="download.html">Download</a>
       </div>
       <div>
@@ -130,7 +97,15 @@
   </footer>
 
   <script src="js/data.js"></script>
+  <script src="js/github.js"></script>
   <script src="js/render.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      renderConsoleGrid('allConsolesGrid', CONSOLES);
+      const all = await fetchAllReleases(5);
+      updateConsoleCounts(all);
+    });
+  </script>
 </body>
 </html>
