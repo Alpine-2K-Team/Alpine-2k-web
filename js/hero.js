@@ -1,5 +1,6 @@
 /* ============================
    ALPINE.2K — Hero Background Slideshow
+   Rotates through BACKGROUNDS with fade + Ken Burns
    ============================ */
 
 (function () {
@@ -18,6 +19,9 @@
 
   if (isStatic) return;
 
+  const label = document.getElementById('heroLabel');
+  const LABELS = ['Featured', 'Racing', 'Action', 'Retro', 'Arcade', 'Classics'];
+
   const dotsWrap = document.getElementById('slideDots');
   const dots = [];
   if (dotsWrap) {
@@ -33,7 +37,14 @@
 
   let current = 0;
   let timer = null;
-  const INTERVAL = 6000;
+  const INTERVAL = 6500;
+
+  function updateLabel(i) {
+    if (!label) return;
+    label.textContent = LABELS[i % LABELS.length];
+    label.style.opacity = '0';
+    setTimeout(() => { label.style.opacity = '0.85'; }, 60);
+  }
 
   function go(i) {
     const slides = stack.querySelectorAll('.bg-slide');
@@ -42,6 +53,7 @@
     current = (i + slides.length) % slides.length;
     slides[current].classList.add('active');
     if (dots[current]) dots[current].classList.add('active');
+    updateLabel(current);
     restart();
   }
 
@@ -52,5 +64,6 @@
     timer = setInterval(next, INTERVAL);
   }
 
+  updateLabel(0);
   restart();
 })();
