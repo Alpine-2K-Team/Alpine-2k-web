@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alpine.2K — The Homebrew App for Modded Consoles</title>
-  <meta name="description" content="Alpine.2K is a homebrew app for modded consoles. Install it once and download real, legally acquired games and homebrew directly on your console." />
+  <meta name="description" content="Alpine.2K is a homebrew app for modded consoles. Every console has its own Alpine.2K repo — install the app, download games and homebrew directly on your console." />
   <link rel="icon" type="image/png" href="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,14 +13,12 @@
 </head>
 <body class="home">
 
-  <!-- ============ ROTATING BACKGROUND ============ -->
   <div class="bg-layer" aria-hidden="true">
     <div class="bg-gif"></div>
     <div class="bg-stack" id="bgStack"></div>
   </div>
   <div class="bg-vignette" aria-hidden="true"></div>
 
-  <!-- ============ NAVBAR ============ -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="index.html" class="brand">
@@ -30,7 +28,6 @@
       <nav class="nav-links">
         <a href="store.html">Store</a>
         <a href="consoles.html">Consoles</a>
-        <a href="homebrew.html">Homebrew</a>
         <a href="download.html">Download</a>
         <a href="about.html">About</a>
         <a href="https://github.com/Alpine-2K" target="_blank" class="nav-gh">GitHub</a>
@@ -44,13 +41,11 @@
     <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="mobile-logo" />
     <a href="store.html">Store</a>
     <a href="consoles.html">Consoles</a>
-    <a href="homebrew.html">Homebrew</a>
     <a href="download.html">Download</a>
     <a href="about.html">About</a>
     <a href="legal.html">Legal</a>
   </div>
 
-  <!-- ============ HERO (Rockstar-style fullscreen) ============ -->
   <section class="hero">
     <div class="hero-slide-label" id="heroLabel">Featured</div>
     <div class="container hero-content">
@@ -67,42 +62,38 @@
     <div class="scroll-hint">Scroll ↓</div>
   </section>
 
-  <!-- ============ FULL-BLEED FEATURE BAND (Rockstar "Latest & Greatest") ============ -->
   <section class="feature-band">
     <div class="feature-band-bg" style="background-image:url('assets/forza-horizon-2-is-the-best-looking-game-on-xbox-one-change-v0-mp9w1wyk1lge1.jpg')"></div>
     <div class="feature-band-overlay"></div>
     <div class="container feature-band-content">
-      <p class="eyebrow">Now Available</p>
-      <h2 class="feature-band-title">Alpine.2K <span class="gradient-text">v1.0</span></h2>
-      <p class="feature-band-sub">The first public build of the Alpine.2K homebrew app — for supported modded consoles.</p>
-      <a href="download.html" class="btn btn-primary">Get the app</a>
+      <p class="eyebrow">Every console. Its own repo.</p>
+      <h2 class="feature-band-title">Built for <span class="gradient-text">modded consoles</span></h2>
+      <p class="feature-band-sub">PS5, PS4, PS3, Xbox, Xbox 360, Nintendo DS, Wii — each has its own Alpine.2K GitHub repo, packed with every release for that console.</p>
+      <a href="consoles.html" class="btn btn-primary">See consoles</a>
     </div>
   </section>
 
-  <!-- ============ STATS ============ -->
   <section class="stats">
     <div class="container stats-grid">
-      <div><div class="stat-val">12+</div><div class="stat-lbl">Consoles</div></div>
-      <div><div class="stat-val">1000+</div><div class="stat-lbl">Games</div></div>
-      <div><div class="stat-val">500+</div><div class="stat-lbl">Homebrew</div></div>
+      <div><div class="stat-val">7+</div><div class="stat-lbl">Consoles</div></div>
       <div><div class="stat-val">100%</div><div class="stat-lbl">Legal</div></div>
+      <div><div class="stat-val">∞</div><div class="stat-lbl">Homebrew</div></div>
+      <div><div class="stat-val">1</div><div class="stat-lbl">App</div></div>
     </div>
   </section>
 
-  <!-- ============ SPLIT PANEL (Rockstar "feature" tile) ============ -->
   <section class="split-panel">
     <div class="split-panel-media" style="background-image:url('assets/homefront-xbox-360-17_orig.png')">
       <div class="split-panel-media-overlay"></div>
     </div>
     <div class="split-panel-body">
       <p class="eyebrow">What it is</p>
-      <h2>An app store <span class="gradient-text">on your console</span></h2>
-      <p class="muted">Alpine.2K is a homebrew app. Install it once on your modded console, and browse games, DLC, updates, and homebrew — all from inside the app.</p>
-      <a href="about.html" class="btn btn-ghost">Learn more →</a>
+      <h2>One repo <span class="gradient-text">per console</span></h2>
+      <p class="muted">Every console has its own Alpine.2K repo on GitHub — <code>alpine-2k-ps5</code>, <code>alpine-2k-ps4</code>, <code>alpine-2k-xbox360</code> and so on. Each repo holds every release for that console. This site just shows them, live.</p>
+      <a href="consoles.html" class="btn btn-ghost">Browse repos →</a>
     </div>
   </section>
 
-  <!-- ============ HORIZONTAL SCROLL — CONSOLES ============ -->
   <section class="section">
     <div class="container">
       <div class="section-head section-head-left">
@@ -116,41 +107,38 @@
     <div class="scroll-row" id="consoleGrid"></div>
   </section>
 
-  <!-- ============ FULL-BLEED FEATURE (second one, reversed) ============ -->
   <section class="split-panel reverse">
     <div class="split-panel-media" style="background-image:url('assets/GRID-Autosport-Xbox-360.jpg')">
       <div class="split-panel-media-overlay"></div>
     </div>
     <div class="split-panel-body">
-      <p class="eyebrow">Inside the app</p>
-      <h2>Real games. <span class="gradient-text">Real downloads.</span></h2>
-      <p class="muted">Browse the full library — PS3, PS4, PS5, Xbox, Xbox 360, Wii, Nintendo DS, and more. Every download is legally acquired or community homebrew.</p>
+      <p class="eyebrow">Inside the store</p>
+      <h2>Latest releases, <span class="gradient-text">live from GitHub.</span></h2>
+      <p class="muted">Every time a release is published to a console repo, it appears on this site instantly. No re-uploads, no re-indexing — just click and download.</p>
       <a href="store.html" class="btn btn-primary">Enter the store →</a>
     </div>
   </section>
 
-  <!-- ============ HORIZONTAL SCROLL — GAMES ============ -->
   <section class="section section-alt">
     <div class="container">
       <div class="section-head section-head-left">
         <div>
-          <p class="eyebrow">Inside the app</p>
-          <h2>Featured games</h2>
+          <p class="eyebrow">Latest releases</p>
+          <h2>Fresh from the repos</h2>
         </div>
-        <a href="store.html" class="section-link">All games →</a>
+        <a href="store.html" class="section-link">All releases →</a>
       </div>
     </div>
-    <div class="scroll-row" id="gameGrid"></div>
+    <div class="grid-4 container" id="gameGrid"></div>
   </section>
 
-  <!-- ============ CTA ============ -->
   <section class="cta">
     <div class="cta-bg" style="background-image:url('assets/RM01-600x337.jpg')"></div>
     <div class="cta-overlay"></div>
     <div class="container">
       <p class="eyebrow">Get started</p>
       <h2>Ready to <span class="gradient-text">ascend?</span></h2>
-      <p class="cta-sub">Grab the app for your modded console and unlock every game and homebrew you legally own.</p>
+      <p class="cta-sub">Grab the app for your modded console and unlock every release its repo has to offer.</p>
       <div class="hero-cta">
         <a href="download.html" class="btn btn-primary">Download Alpine.2K</a>
         <a href="https://github.com/Alpine-2K" target="_blank" class="btn btn-ghost">View on GitHub</a>
@@ -158,18 +146,16 @@
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
         <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="footer-logo" />
-        <p class="muted">The homebrew app for modded consoles. Games and homebrew — all in one place.</p>
+        <p class="muted">One repo per console. One app for everything.</p>
       </div>
       <div>
         <h4>Explore</h4>
         <a href="store.html">Store</a>
         <a href="consoles.html">Consoles</a>
-        <a href="homebrew.html">Homebrew</a>
         <a href="download.html">Download</a>
       </div>
       <div>
@@ -185,8 +171,22 @@
   </footer>
 
   <script src="js/data.js"></script>
+  <script src="js/github.js"></script>
   <script src="js/render.js"></script>
   <script src="js/hero.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    /* Home page boot */
+    document.addEventListener('DOMContentLoaded', async () => {
+      renderConsoleGrid('consoleGrid', CONSOLES);
+
+      const grid = document.getElementById('gameGrid');
+      if (grid) grid.innerHTML = `<p class="muted" style="grid-column:1/-1;text-align:center;padding:40px 0;">Loading releases…</p>`;
+
+      const all = await fetchAllReleases(10);
+      renderReleaseGrid('gameGrid', all, 8);
+      updateConsoleCounts(all);
+    });
+  </script>
 </body>
 </html>
