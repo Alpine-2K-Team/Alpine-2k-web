@@ -68,6 +68,28 @@ function homebrewCard(h) {
   `;
 }
 
+function downloadCard(c) {
+  const thumbInner = c.logo
+    ? `<img src="assets/${c.logo}" alt="${c.name}" class="console-logo" loading="lazy" />`
+    : `<span class="console-short">${c.short}</span>`;
+  return `
+    <div class="console-card" style="--accent:${c.accent}">
+      <div class="console-thumb">
+        <div class="console-glow"></div>
+        ${thumbInner}
+      </div>
+      <div class="console-body">
+        <div class="console-top">
+          <h3>${c.name}</h3>
+          <span class="badge badge-planned">Coming soon</span>
+        </div>
+        <p class="muted small" style="margin:10px 0 14px;">Alpine.2K app for ${c.short}.</p>
+        <button class="btn btn-ghost btn-sm" disabled style="opacity:0.6;cursor:not-allowed;">Not yet available</button>
+      </div>
+    </div>
+  `;
+}
+
 function renderConsoleGrid(targetId, list, limit) {
   const el = document.getElementById(targetId);
   if (!el) return;
@@ -86,6 +108,12 @@ function renderHomebrewGrid(targetId, list) {
   const el = document.getElementById(targetId);
   if (!el) return;
   el.innerHTML = list.map(homebrewCard).join('');
+}
+
+function renderDownloadGrid(targetId, list) {
+  const el = document.getElementById(targetId);
+  if (!el) return;
+  el.innerHTML = list.map(downloadCard).join('');
 }
 
 function setupStoreFilters() {
@@ -109,10 +137,11 @@ function setupStoreFilters() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderConsoleGrid('consoleGrid', CONSOLES, 6);
+  renderConsoleGrid('consoleGrid', CONSOLES, 8);
   renderConsoleGrid('allConsolesGrid', CONSOLES);
-  renderGameGrid('gameGrid', GAMES, 4);
+  renderGameGrid('gameGrid', GAMES, 8);
   renderGameGrid('storeGrid', GAMES);
   renderHomebrewGrid('homebrewGrid', HOMEBREW);
+  renderDownloadGrid('downloadGrid', CONSOLES);
   setupStoreFilters();
 });
