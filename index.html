@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpine.2K — The Game Store</title>
+  <meta name="description" content="Alpine.2K — download every legally acquired game and homebrew for every console." />
+  <link rel="icon" type="image/png" href="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
 
+  <!-- BACKGROUND GIF -->
+  <div class="bg-gif" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="brand-logo" />
+        <span class="brand-text">ALPINE<span>.2K</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="store.html">Store</a>
+        <a href="consoles.html">Consoles</a>
+        <a href="homebrew.html">Homebrew</a>
+        <a href="about.html">About</a>
+        <a href="legal.html">Legal</a>
+        <a href="https://github.com/Alpine-2K" target="_blank" class="nav-gh">GitHub</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" id="closeBtn">✕</button>
+    <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="mobile-logo" />
+    <a href="store.html">Store</a>
+    <a href="consoles.html">Consoles</a>
+    <a href="homebrew.html">Homebrew</a>
+    <a href="about.html">About</a>
+    <a href="legal.html">Legal</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="hero-logo" />
+      <p class="eyebrow">Alpine.2K · Game Store</p>
+      <h1 class="hero-title">Every game.<br /><span class="accent">Every console.</span></h1>
+      <p class="hero-sub">Download every legally acquired game and homebrew for every console — PS3, PS4, PS5, Xbox, Xbox 360, Nintendo DS, Wii, and more.</p>
+      <div class="hero-cta">
+        <a href="store.html" class="btn btn-primary">Browse Store</a>
+        <a href="consoles.html" class="btn btn-ghost">View Consoles</a>
+      </div>
+    </div>
+    <div class="scroll-hint">Scroll ↓</div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div><div class="stat-val">12+</div><div class="stat-lbl">Consoles</div></div>
+      <div><div class="stat-val">1000+</div><div class="stat-lbl">Games</div></div>
+      <div><div class="stat-val">500+</div><div class="stat-lbl">Homebrew</div></div>
+      <div><div class="stat-val">100%</div><div class="stat-lbl">Legal</div></div>
+    </div>
+  </section>
+
+  <!-- CONSOLES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Supported Systems</p>
+        <h2>Pick your console</h2>
+      </div>
+      <div class="grid-3" id="consoleGrid"></div>
+      <div class="section-cta">
+        <a href="consoles.html" class="btn btn-ghost">See all consoles →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE PREVIEW -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">The Store</p>
+        <h2>Featured games</h2>
+      </div>
+      <div class="grid-4" id="gameGrid"></div>
+      <div class="section-cta">
+        <a href="store.html" class="btn btn-primary">Enter the store →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <p class="eyebrow">Join the expedition</p>
+      <h2>Ready to <span class="accent">ascend?</span></h2>
+      <p class="cta-sub">Games, homebrew, and everything in between — one hub for every console.</p>
+      <div class="hero-cta">
+        <a href="store.html" class="btn btn-primary">Browse Store</a>
+        <a href="https://github.com/Alpine-2K" target="_blank" class="btn btn-ghost">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="footer-logo" />
+        <p class="muted">The hub for legally acquired games and homebrew across every console.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="store.html">Store</a>
+        <a href="consoles.html">Consoles</a>
+        <a href="homebrew.html">Homebrew</a>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <a href="https://github.com/Alpine-2K" target="_blank">GitHub</a>
+        <a href="about.html">About</a>
+        <a href="legal.html">Legal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">© <span id="year"></span> Alpine.2K. MIT Licensed. — Educational use only.</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
