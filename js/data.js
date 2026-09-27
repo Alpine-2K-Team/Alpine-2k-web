@@ -12,8 +12,7 @@ const BACKGROUNDS = [
   'assets/1054.jpg'
 ];
 
-/* Consoles — status: planned | coming | live
-   logo: filename in assets/ (leave '' to fall back to text) */
+/* Consoles — logo: filename in assets/ (leave '' to fall back to text) */
 const CONSOLES = [
   {
     id: 'ps5',
@@ -61,7 +60,7 @@ const CONSOLES = [
     short: 'PSP',
     accent: '#0070D1',
     status: 'planned',
-    logo: '',   // ← send filename later
+    logo: '',
     games: 0,
     homebrew: 0
   },
@@ -101,7 +100,7 @@ const CONSOLES = [
     short: 'Wii U',
     accent: '#00A0E9',
     status: 'planned',
-    logo: '',   // ← send filename later
+    logo: '',
     games: 0,
     homebrew: 0
   },
@@ -111,7 +110,7 @@ const CONSOLES = [
     short: 'Nintendo DS',
     accent: '#E60012',
     status: 'planned',
-    logo: '',   // ← send filename later
+    logo: '',
     games: 0,
     homebrew: 0
   },
@@ -121,7 +120,7 @@ const CONSOLES = [
     short: '3DS',
     accent: '#E60012',
     status: 'planned',
-    logo: '',   // ← send filename later
+    logo: '',
     games: 0,
     homebrew: 0
   },
@@ -131,24 +130,24 @@ const CONSOLES = [
     short: 'Switch',
     accent: '#E60012',
     status: 'planned',
-    logo: '',   // ← send filename later
+    logo: '',
     games: 0,
     homebrew: 0
   }
 ];
 
 const GAMES = [
-  { id: 1,  title: 'Astro Bot',             console: 'ps5',     price: 'Free' },
-  { id: 2,  title: 'Spider-Man 2',          console: 'ps5',     price: 'Free' },
-  { id: 3,  title: 'Gran Turismo 7',        console: 'ps4',     price: 'Free' },
-  { id: 4,  title: 'God of War',            console: 'ps3',     price: 'Free' },
-  { id: 5,  title: 'Uncharted: Golden Abyss',console: 'psvita', price: 'Free' },
-  { id: 6,  title: 'Halo 3',                console: 'xbox360', price: 'Free' },
-  { id: 7,  title: 'Forza Horizon 2',       console: 'xbox',    price: 'Free' },
-  { id: 8,  title: 'Homefront',             console: 'xbox360', price: 'Free' },
-  { id: 9,  title: 'GRID Autosport',        console: 'xbox360', price: 'Free' },
-  { id: 10, title: 'Mario Kart Wii',        console: 'wii',     price: 'Free' },
-  { id: 11, title: 'New Super Mario Bros',  console: 'nds',     price: 'Free' }
+  { id: 1,  title: 'Astro Bot',               console: 'ps5',     price: 'Free' },
+  { id: 2,  title: 'Spider-Man 2',            console: 'ps5',     price: 'Free' },
+  { id: 3,  title: 'Gran Turismo 7',          console: 'ps4',     price: 'Free' },
+  { id: 4,  title: 'God of War',              console: 'ps3',     price: 'Free' },
+  { id: 5,  title: 'Uncharted: Golden Abyss', console: 'psvita',  price: 'Free' },
+  { id: 6,  title: 'Halo 3',                  console: 'xbox360', price: 'Free' },
+  { id: 7,  title: 'Forza Horizon 2',         console: 'xbox',    price: 'Free' },
+  { id: 8,  title: 'Homefront',               console: 'xbox360', price: 'Free' },
+  { id: 9,  title: 'GRID Autosport',          console: 'xbox360', price: 'Free' },
+  { id: 10, title: 'Mario Kart Wii',          console: 'wii',     price: 'Free' },
+  { id: 11, title: 'New Super Mario Bros',    console: 'nds',     price: 'Free' }
 ];
 
 const HOMEBREW = [
