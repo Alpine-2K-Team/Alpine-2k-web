@@ -28,12 +28,6 @@ https://alpine-2k-team.github.io/alpine-2k-web/
 - `Alpine-2K-Nds`
 - `Alpine-2K-Wii`
 
-## Deploy
-1. Push all files to `main`
-2. Settings → Pages → Source: **Deploy from a branch**
-3. Branch: **main** · Folder: **/ (root)**
-4. Wait 1–2 min
-
 ## Palette
 - Background: `#000`
 - Accent (blue): `#5BC8FF`
