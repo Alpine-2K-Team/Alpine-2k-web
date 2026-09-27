@@ -1,6 +1,5 @@
 /* ============================
    ALPINE.2K — Store page
-   Fetches every console's releases, filters, renders.
    ============================ */
 
 const storeState = { all: [], filter: 'all', loaded: false };
@@ -8,9 +7,7 @@ const storeState = { all: [], filter: 'all', loaded: false };
 async function initStore() {
   const grid = document.getElementById('storeGrid');
   if (!grid) return;
-
   grid.innerHTML = `<p class="muted" style="grid-column:1/-1;text-align:center;padding:48px 0;">Loading releases…</p>`;
-
   storeState.all = await fetchAllReleases();
   storeState.loaded = true;
   renderFiltered();
