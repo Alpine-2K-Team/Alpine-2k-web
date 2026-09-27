@@ -2,7 +2,6 @@
    ALPINE.2K — Render Functions
    ============================ */
 
-/* ---------- Console card ---------- */
 function consoleCard(c) {
   const thumbInner = c.logo
     ? `<img src="assets/${c.logo}" alt="${c.name}" class="console-logo" loading="lazy"
@@ -29,7 +28,6 @@ function consoleCard(c) {
   `;
 }
 
-/* ---------- Release (game) card ---------- */
 function releaseCard(r) {
   const firstAsset = (r.assets || [])[0];
   const url = firstAsset ? firstAsset.browser_download_url : r.html_url;
@@ -52,7 +50,6 @@ function releaseCard(r) {
   `;
 }
 
-/* ---------- Release row (used on console page) ---------- */
 function releaseRow(r) {
   const firstAsset = (r.assets || [])[0];
   const url = firstAsset ? firstAsset.browser_download_url : r.html_url;
@@ -62,7 +59,7 @@ function releaseRow(r) {
   return `
     <div class="release-row">
       <div>
-        <h4 style="font-size:1.1rem;margin-bottom:6px;">${r.name || r.tag_name}</h4>
+        <h4>${r.name || r.tag_name}</h4>
         <p class="muted small">${r.tag_name}${date ? ' · ' + date : ''}${size ? ' · ' + size : ''}</p>
       </div>
       <a class="btn btn-primary btn-sm" href="${url}" target="_blank" rel="noopener">Download</a>
@@ -70,7 +67,6 @@ function releaseRow(r) {
   `;
 }
 
-/* ---------- Grid renderers ---------- */
 function renderConsoleGrid(targetId, list) {
   const el = document.getElementById(targetId);
   if (!el) return;
@@ -98,7 +94,6 @@ function renderReleaseList(targetId, releases) {
   el.innerHTML = releases.map(releaseRow).join('');
 }
 
-/* ---------- Live count badges on console cards ---------- */
 function updateConsoleCounts(allReleases) {
   CONSOLES.forEach((c) => {
     const badge = document.querySelector(`.badge[data-count="${c.id}"]`);
