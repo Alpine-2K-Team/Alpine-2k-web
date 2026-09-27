@@ -11,13 +11,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class="home">
 
-  <!-- BACKGROUND GIF -->
-  <div class="bg-gif" aria-hidden="true"></div>
-  <div class="bg-overlay" aria-hidden="true"></div>
+  <div class="bg-stack" id="bgStack" aria-hidden="true"></div>
+  <div class="bg-vignette" aria-hidden="true"></div>
 
-  <!-- NAVBAR -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="index.html" class="brand">
@@ -36,7 +34,6 @@
     </div>
   </header>
 
-  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <button class="close-btn" id="closeBtn">✕</button>
     <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="mobile-logo" />
@@ -47,7 +44,6 @@
     <a href="legal.html">Legal</a>
   </div>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="container hero-content">
       <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="hero-logo" />
@@ -59,10 +55,10 @@
         <a href="consoles.html" class="btn btn-ghost">View Consoles</a>
       </div>
     </div>
+    <div class="slide-dots" id="slideDots" aria-hidden="true"></div>
     <div class="scroll-hint">Scroll ↓</div>
   </section>
 
-  <!-- STATS -->
   <section class="stats">
     <div class="container stats-grid">
       <div><div class="stat-val">12+</div><div class="stat-lbl">Consoles</div></div>
@@ -72,7 +68,6 @@
     </div>
   </section>
 
-  <!-- CONSOLES -->
   <section class="section">
     <div class="container">
       <div class="section-head">
@@ -86,7 +81,6 @@
     </div>
   </section>
 
-  <!-- STORE PREVIEW -->
   <section class="section section-alt">
     <div class="container">
       <div class="section-head">
@@ -100,7 +94,6 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta">
     <div class="container">
       <p class="eyebrow">Join the expedition</p>
@@ -113,7 +106,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
@@ -140,6 +132,7 @@
 
   <script src="js/data.js"></script>
   <script src="js/render.js"></script>
+  <script src="js/hero.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
