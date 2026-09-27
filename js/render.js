@@ -3,11 +3,16 @@
    ============================ */
 
 function consoleCard(c) {
+  // Logo if provided, else text fallback
+  const thumbInner = c.logo
+    ? `<img src="assets/${c.logo}" alt="${c.name}" class="console-logo" loading="lazy" />`
+    : `<span class="console-short">${c.short}</span>`;
+
   return `
     <div class="console-card" data-console="${c.id}" style="--accent:${c.accent}">
       <div class="console-thumb">
         <div class="console-glow"></div>
-        <span class="console-short">${c.short}</span>
+        ${thumbInner}
       </div>
       <div class="console-body">
         <div class="console-top">
@@ -98,10 +103,11 @@ function setupStoreFilters() {
       btn.classList.add('active');
       const f = btn.dataset.filter;
       const list = f === 'all' ? GAMES : GAMES.filter((g) => g.console === f);
-      grid.innerHTML = list.map(gameCard).join('');
       if (!list.length) {
         grid.innerHTML = `<p class="muted" style="grid-column:1/-1;text-align:center;padding:40px 0;">No games yet for this console — coming soon.</p>`;
+        return;
       }
+      grid.innerHTML = list.map(gameCard).join('');
     });
   });
 }
