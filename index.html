@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alpine.2K — The Game Store</title>
-  <meta name="description" content="Alpine.2K — download every legally acquired game and homebrew for every console." />
+  <title>Alpine.2K — The Homebrew App for Modded Consoles</title>
+  <meta name="description" content="Alpine.2K is a homebrew app for modded consoles. Install it once and download real, legally acquired games and homebrew directly on your console." />
   <link rel="icon" type="image/png" href="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,7 +13,6 @@
 </head>
 <body class="home">
 
-  <!-- BACKGROUND LAYERS (fixed, behind everything) -->
   <div class="bg-layer" aria-hidden="true">
     <div class="bg-gif"></div>
     <div class="bg-stack" id="bgStack"></div>
@@ -30,8 +29,8 @@
         <a href="store.html">Store</a>
         <a href="consoles.html">Consoles</a>
         <a href="homebrew.html">Homebrew</a>
+        <a href="download.html">Download</a>
         <a href="about.html">About</a>
-        <a href="legal.html">Legal</a>
         <a href="https://github.com/Alpine-2K" target="_blank" class="nav-gh">GitHub</a>
       </nav>
       <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
@@ -44,6 +43,7 @@
     <a href="store.html">Store</a>
     <a href="consoles.html">Consoles</a>
     <a href="homebrew.html">Homebrew</a>
+    <a href="download.html">Download</a>
     <a href="about.html">About</a>
     <a href="legal.html">Legal</a>
   </div>
@@ -51,12 +51,12 @@
   <section class="hero">
     <div class="container hero-content">
       <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="hero-logo" />
-      <p class="eyebrow">Alpine.2K · Game Store</p>
-      <h1 class="hero-title">Every game.<br /><span class="accent">Every console.</span></h1>
-      <p class="hero-sub">Download every legally acquired game and homebrew for every console — PS3, PS4, PS5, Xbox, Xbox 360, Nintendo DS, Wii, and more.</p>
+      <p class="eyebrow">Alpine.2K · Homebrew App</p>
+      <h1 class="hero-title">One app.<br /><span class="accent">Every console.</span></h1>
+      <p class="hero-sub">The homebrew app for modded consoles. Install it once, then download real — legally acquired — games and homebrew straight from your console.</p>
       <div class="hero-cta">
-        <a href="store.html" class="btn btn-primary">Browse Store</a>
-        <a href="consoles.html" class="btn btn-ghost">View Consoles</a>
+        <a href="download.html" class="btn btn-primary">Download Alpine.2K</a>
+        <a href="consoles.html" class="btn btn-ghost">Supported Consoles</a>
       </div>
     </div>
     <div class="slide-dots" id="slideDots" aria-hidden="true"></div>
@@ -72,7 +72,32 @@
     </div>
   </section>
 
+  <!-- WHAT IS IT -->
   <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">What it is</p>
+        <h2>An app store on your console</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Install the app</h3>
+          <p class="muted">Download the Alpine.2K build for your modded console and install it once.</p>
+        </div>
+        <div class="card">
+          <h3>2. Browse everything</h3>
+          <p class="muted">Games, DLC, updates, and homebrew — all inside the Alpine.2K app on your console.</p>
+        </div>
+        <div class="card">
+          <h3>3. Download to console</h3>
+          <p class="muted">Tap install, and Alpine.2K handles the rest — straight to your console's storage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSOLES -->
+  <section class="section section-alt">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Supported Systems</p>
@@ -85,26 +110,28 @@
     </div>
   </section>
 
-  <section class="section section-alt">
+  <!-- FEATURED GAMES -->
+  <section class="section">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">The Store</p>
+        <p class="eyebrow">Inside the app</p>
         <h2>Featured games</h2>
       </div>
       <div class="grid-4" id="gameGrid"></div>
       <div class="section-cta">
-        <a href="store.html" class="btn btn-primary">Enter the store →</a>
+        <a href="store.html" class="btn btn-primary">Browse the full library →</a>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta">
     <div class="container">
-      <p class="eyebrow">Join the expedition</p>
+      <p class="eyebrow">Get started</p>
       <h2>Ready to <span class="accent">ascend?</span></h2>
-      <p class="cta-sub">Games, homebrew, and everything in between — one hub for every console.</p>
+      <p class="cta-sub">Grab the app for your modded console and unlock every game and homebrew you legally own.</p>
       <div class="hero-cta">
-        <a href="store.html" class="btn btn-primary">Browse Store</a>
+        <a href="download.html" class="btn btn-primary">Download Alpine.2K</a>
         <a href="https://github.com/Alpine-2K" target="_blank" class="btn btn-ghost">View on GitHub</a>
       </div>
     </div>
@@ -114,13 +141,14 @@
     <div class="container footer-grid">
       <div>
         <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="footer-logo" />
-        <p class="muted">The hub for legally acquired games and homebrew across every console.</p>
+        <p class="muted">The homebrew app for modded consoles. Games and homebrew — all in one place.</p>
       </div>
       <div>
         <h4>Explore</h4>
         <a href="store.html">Store</a>
         <a href="consoles.html">Consoles</a>
         <a href="homebrew.html">Homebrew</a>
+        <a href="download.html">Download</a>
       </div>
       <div>
         <h4>Community</h4>
