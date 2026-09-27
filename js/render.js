@@ -4,7 +4,8 @@
 
 function consoleCard(c) {
   const thumbInner = c.logo
-    ? `<img src="assets/${c.logo}" alt="${c.name}" class="console-logo" loading="lazy" />`
+    ? `<img src="assets/${c.logo}" alt="${c.name}" class="console-logo" loading="lazy"
+         onerror="this.onerror=null;this.replaceWith(Object.assign(document.createElement('span'),{className:'console-short',textContent:'${c.short}'}));" />`
     : `<span class="console-short">${c.short}</span>`;
 
   return `
