@@ -24,9 +24,10 @@
       <nav class="nav-links">
         <a href="store.html">Store</a>
         <a href="consoles.html">Consoles</a>
-        <a href="homebrew.html">Homebrew</a>
-        <a href="download.html">Download</a>
-        <a href="about.html" class="active">About</a>
+        <a href="guides.html">Guides</a>
+        <a href="news.html">News</a>
+        <a href="faq.html">FAQ</a>
+        <a href="donate.html" class="nav-donate">Donate</a>
         <a href="https://github.com/Alpine-2K" target="_blank" class="nav-gh">GitHub</a>
       </nav>
       <button class="menu-btn" id="menuBtn">☰</button>
@@ -38,14 +39,17 @@
     <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="mobile-logo" />
     <a href="store.html">Store</a>
     <a href="consoles.html">Consoles</a>
-    <a href="homebrew.html">Homebrew</a>
-    <a href="download.html">Download</a>
+    <a href="guides.html">Guides</a>
+    <a href="news.html">News</a>
+    <a href="faq.html">FAQ</a>
+    <a href="donate.html">Donate</a>
     <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
     <a href="legal.html">Legal</a>
   </div>
 
   <section class="page-head page-head-lg">
-    <div class="page-head-bg" style="background-image:url('assets/1054.jpg')"></div>
+    <div class="page-head-bg" style="background-image:url('assets/RM01-600x337.jpg')"></div>
     <div class="page-head-overlay"></div>
     <div class="container">
       <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="page-logo" />
@@ -56,27 +60,26 @@
 
   <section class="section">
     <div class="container prose">
-      <p>Alpine.2K is a <strong>homebrew app</strong> for modded consoles. Install it once, then download real — legally acquired — games and community homebrew directly on your console.</p>
-      <p>Every console gets its own Alpine.2K build. The app lives on your console; the library lives on GitHub; the site you're on right now is the front door.</p>
+      <p>Alpine.2K is a <strong>homebrew app for modded consoles</strong>. Install it once on your console and it becomes an app store — browse and download releases straight from the GitHub repo for that console.</p>
+      <p>Every console gets its own Alpine.2K repo. The app lives on your console; the library lives on GitHub; this website is the front door that ties it all together.</p>
 
-      <div class="grid-2">
-        <div class="card">
-          <h3>All Consoles, One App</h3>
-          <p class="muted">From retro to current-gen — one app per console, one library across all of them.</p>
-        </div>
-        <div class="card">
-          <h3>Homebrew First</h3>
-          <p class="muted">Community-made tools, apps, and games — free to install on your modded console.</p>
-        </div>
-        <div class="card">
-          <h3>Legally Acquired Only</h3>
-          <p class="muted">No piracy, no ROMs. Only content you legally own or that's freely distributed.</p>
-        </div>
-        <div class="card">
-          <h3>Open Source</h3>
-          <p class="muted">MIT licensed. Fork it, improve it, ship it.</p>
-        </div>
-      </div>
+      <h2>What we stand for</h2>
+      <ul>
+        <li><strong>Free forever.</strong> No paywalls, no premium tiers.</li>
+        <li><strong>Legal only.</strong> No pirated games, ROMs, or ISOs — ever.</li>
+        <li><strong>Open source.</strong> MIT-licensed. Fork it, improve it, ship it.</li>
+        <li><strong>Community first.</strong> Built by modders, for modders.</li>
+      </ul>
+
+      <h2>How it works</h2>
+      <ul>
+        <li>Each console has its own repo: <code>Alpine-2K-Ps5</code>, <code>Alpine-2K-Ps4</code>, <code>Alpine-2K-Xbox360</code>, and so on.</li>
+        <li>Releases published to those repos appear on this site within minutes.</li>
+        <li>The Alpine.2K app on your console reads the same repos and downloads directly.</li>
+      </ul>
+
+      <h2>Get involved</h2>
+      <p>Report bugs, submit guides, request features, or just say hi. Everything's on <a href="https://github.com/Alpine-2K">GitHub</a>.</p>
     </div>
   </section>
 
@@ -84,18 +87,24 @@
     <div class="container footer-grid">
       <div>
         <img src="assets/gemini-image-2_make_me_a_logo_for_my_xbox_360_project_called_Alpine.2K_make_it_have_a_xbox_360_-0-removebg-preview.png" alt="Alpine.2K" class="footer-logo" />
-        <p class="muted">The homebrew app for modded consoles.</p>
+        <p class="muted">One repo per console. One app for everything.</p>
       </div>
       <div>
         <h4>Explore</h4>
         <a href="store.html">Store</a>
         <a href="consoles.html">Consoles</a>
-        <a href="homebrew.html">Homebrew</a>
         <a href="download.html">Download</a>
       </div>
       <div>
+        <h4>Learn</h4>
+        <a href="guides.html">Guides</a>
+        <a href="faq.html">FAQ</a>
+        <a href="news.html">News</a>
+      </div>
+      <div>
         <h4>Community</h4>
-        <a href="https://github.com/Alpine-2K" target="_blank">GitHub</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
         <a href="about.html">About</a>
         <a href="legal.html">Legal</a>
       </div>
@@ -106,6 +115,7 @@
   </footer>
 
   <script src="js/data.js"></script>
+  <script src="js/github.js"></script>
   <script src="js/render.js"></script>
   <script src="js/main.js"></script>
 </body>
